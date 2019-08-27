@@ -6,7 +6,7 @@
 // console.log("User flipped " + cardOne);
 // console.log("User flipped " + cardThree);
 
-var cards = [
+const cards = [
     {
         rank: "queen",
         suit: "hearts",
@@ -28,7 +28,7 @@ var cards = [
         cardImage: "images/king-of-diamonds.png"
     }
 ];
-var cardsInPlay = [];
+let cardsInPlay = [];
 
 // Check to see if the two cards are a match
 function checkForMatch() {
@@ -40,7 +40,8 @@ function checkForMatch() {
 }
 
 // Choosing the cards
-function flipCard(cardId) {
+function flipCard() {
+    const cardId = this.getAttribute('data-id');
 
     console.log("User flipped " + cards[cardId].rank);
 
@@ -49,12 +50,26 @@ function flipCard(cardId) {
     console.log(cards[cardId].suit);
 
     console.log(cards[cardId].cardImage);
+
+    this.setAttribute('src', cards[cardId].cardImage)
     // if statement
     if (cardsInPlay.length === 2) {
         return checkForMatch();
     } 
 }
 
-flipCard(0);
-flipCard(2);
+function createBoard() {
+    const gameBoard = document.getElementById('game-board');
+    for (var i = 0; i < cards.length; i++) {
+        var cardElement = document.createElement('img');
+        cardElement.setAttribute('src', 'images/back.png');
+        cardElement.setAttribute('data-id',i);
+        cardElement.addEventListener('click', flipCard);
+        gameBoard.appendChild(cardElement);
+    }
+    
+};
+
+createBoard();
+
 

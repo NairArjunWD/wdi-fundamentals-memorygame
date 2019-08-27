@@ -97,3 +97,9 @@ a:hover {
     border-color: white;
 }
 
+button {
+    background-color: white;
+    border: none;
+    display: inline-block;
+
+}

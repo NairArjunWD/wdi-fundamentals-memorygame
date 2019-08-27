@@ -26,13 +26,14 @@
             the game is to turn over pairs of matching cards.</p>
         
         <p>Now I know what you're thinking, why my game? Why not play any one of the
-            other memory games? Mine are pictures of Komi-san!</p>
+            other memory games? Mine has a reset button!</p>
         
+        <button type="reset" value="Refresh Page" onClick="window.location.reload()">
+            <img src="https://img.icons8.com/windows/64/000000/available-updates.png" alt="" />
+        </button>
+
         <div id="game">
-            <img src="images/back.png" alt="Queen of Diamonds">
-            <img src="images/back.png" alt="Queen of Hearts">
-            <img src="images/back.png" alt="King of Diamonds">
-            <img src="images/back.png" alt="King of Hearts">
+            <div id="game-board" class="board clearfix"></div>
         </div>
     </main>
     
